@@ -1,12 +1,12 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+
 <head>
 	<title>404 - Page Not Found</title>
 	<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta name="robots" content="noarchive" />
 	<link rel="shortcut icon" href="//cdn1.editmysite.com/developer/none.ico" />
-
 	<style type="text/css">
 		@font-face {
 			font-family: 'Proxima Nova';
@@ -49,9 +49,9 @@
 			width: 484px;
 			margin: 0 auto;
 			margin-top: 10%;
-			-webkit-box-shadow: 0px 0px 41px -8px rgba(237,234,237,1);
-			-moz-box-shadow: 0px 0px 41px -8px rgba(237,234,237,1);
-			box-shadow: 0px 0px 41px -8px rgba(237,234,237,1);
+			-webkit-box-shadow: 0px 0px 41px -8px rgba(237, 234, 237, 1);
+			-moz-box-shadow: 0px 0px 41px -8px rgba(237, 234, 237, 1);
+			box-shadow: 0px 0px 41px -8px rgba(237, 234, 237, 1);
 		}
 
 		.header {
@@ -67,7 +67,8 @@
 			margin-bottom: 35px;
 		}
 
-		.check-url, .otherwise {
+		.check-url,
+		.otherwise {
 			color: #666C70;
 		}
 
@@ -90,7 +91,7 @@
 			line-height: 120px;
 		}
 
-		.bottom-content > span {
+		.bottom-content>span {
 			display: inline-block;
 			vertical-align: middle;
 			line-height: normal;
@@ -106,73 +107,67 @@
 				width: 80%;
 			}
 		}
-
 	</style>
-<script type="text/javascript">
-	// We always start this script as debug
-	var isDebugMode = true;
-
-	// This cookie is used when we are in the staging automated tests
-	var isAutomationUser = (document.cookie.indexOf('force-automated-segment') != -1);
-	// as an extra safety measure, only declare the GTM info if W_DEBUG is OFF.
-	if (!window.W_DEBUG && !isAutomationUser) {
-		isDebugMode = false;
-	}
-
-	// This function will add the GTM Script to the page asynchronously
-	// and force it to not be cached
-	(function(elementName) {
-		var firstElement = document.getElementsByTagName(elementName)[0];
-		var cacheBuster = Date.now();
-		var script = document.createElement(elementName);
-
-		// This setting does not do anything
-		// It is always loaded async
-		script.async = true;
-
-		// Added the "internal" parameter here so we know if the pageview is
-		// an internal page or an external page. This should happen on other
-		// internal pages like all of the UC pages.
-		script.src = '/tracking/gtmscript.js?internal=false&cb=' + cacheBuster;
-
-		// This allows us to add a load event listener.
-		script.id = 'aragorn-script';
-
-		firstElement.parentNode.insertBefore(script, firstElement);
-	})('script');
-
-	// The above GTM script is added asynchronously so it is not useable until
-	// the window load event (document load does not wait for async scripts).
-	window.addEventListener('load', function() {
-		// Are the variables loaded, which are required to track an oauth account access event.
-		var canTrackEvent = window._W && window.Aragorn && window.Aragorn.trackAccountAccessEvent;
-
-		if (canTrackEvent && window._W.OauthSignupSource) {
-			// Standard Oauth Signup
-			window.Aragorn.trackAccountAccessEvent('account-sign-up', window._W.OauthSignupSource, 'success');
-		} else if (canTrackEvent && window._W.OauthLoginSource) {
-			// Standard Oauth Login
-			window.Aragorn.trackAccountAccessEvent('account-login', window._W.OauthLoginSource, 'success');
+	<script type="text/javascript">
+		// We always start this script as debug
+		var isDebugMode = true;
+		// This cookie is used when we are in the staging automated tests
+		var isAutomationUser = (document.cookie.indexOf('force-automated-segment') != -1);
+		// as an extra safety measure, only declare the GTM info if W_DEBUG is OFF.
+		if (!window.W_DEBUG && !isAutomationUser) {
+			isDebugMode = false;
 		}
-	});
-</script>
-
+		// This function will add the GTM Script to the page asynchronously
+		// and force it to not be cached
+		(function (elementName) {
+			var firstElement = document.getElementsByTagName(elementName)[0];
+			var cacheBuster = Date.now();
+			var script = document.createElement(elementName);
+			// This setting does not do anything
+			// It is always loaded async
+			script.async = true;
+			// Added the "internal" parameter here so we know if the pageview is
+			// an internal page or an external page. This should happen on other
+			// internal pages like all of the UC pages.
+			script.src = '/tracking/gtmscript.js?internal=false&cb=' + cacheBuster;
+			// This allows us to add a load event listener.
+			script.id = 'aragorn-script';
+			firstElement.parentNode.insertBefore(script, firstElement);
+		})('script');
+		// The above GTM script is added asynchronously so it is not useable until
+		// the window load event (document load does not wait for async scripts).
+		window.addEventListener('load', function () {
+			// Are the variables loaded, which are required to track an oauth account access event.
+			var canTrackEvent = window._W && window.Aragorn && window.Aragorn.trackAccountAccessEvent;
+			if (canTrackEvent && window._W.OauthSignupSource) {
+				// Standard Oauth Signup
+				window.Aragorn.trackAccountAccessEvent('account-sign-up', window._W.OauthSignupSource, 'success');
+			} else if (canTrackEvent && window._W.OauthLoginSource) {
+				// Standard Oauth Login
+				window.Aragorn.trackAccountAccessEvent('account-login', window._W.OauthLoginSource, 'success');
+			}
+		});
+	</script>
 </head>
-<body><!-- Google Tag Manager (noscript) - Install in Body -->
-<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-T82T5C"
-                  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-<!-- End Google Tag Manager (noscript) - Install in Body -->
 
-<div class="warning-container">
-	<h2 class="header">404</h2>
-	<p class="error">Error - Page Not Found</p>
-	<hr>
-	<div class="bottom-content">
+<body>
+	<!-- Google Tag Manager (noscript) - Install in Body -->
+	<noscript>
+		<iframe src="https://www.googletagmanager.com/ns.html?id=GTM-T82T5C" height="0" width="0" style="display:none;visibility:hidden"></iframe>
+	</noscript>
+	<!-- End Google Tag Manager (noscript) - Install in Body -->
+	<div class="warning-container">
+		<h2 class="header">404</h2>
+		<p class="error">Error - Page Not Found</p>
+		<hr>
+		<div class="bottom-content">
 			<span>
 				<p class="check-url">Please check the URL.</p>
-				<p class="otherwise">Otherwise, <a href="/">click here</a> to be redirected to the homepage.</p>
+				<p class="otherwise">Otherwise,
+					<a href="/">click here</a> to be redirected to the homepage.</p>
 			</span>
+		</div>
 	</div>
-</div>
 </body>
+
 </html>
