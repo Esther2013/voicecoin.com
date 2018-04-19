@@ -612,7 +612,7 @@
 
 <body class="header-page  wsite-page-index  sticky-nav-off full-width-on   wsite-theme-dark fade-in">
 	<div class="wrapper">
-		<div class="unite-header">
+		<div class="unite-header" id="navbar">
 			<div class="nav-wrap">
 				<div class="container">
 					<label class="hamburger">
@@ -681,10 +681,10 @@
 		<div class="banner-wrap" style="background-color: transparent">
 			<div class="wsite-elements wsite-not-footer wsite-header-elements">
 				<div class="wsite-section-wrap">
-					<!-- wsite-section-bg-image background-image: url(&quot;/uploads/1/1/5/7/115713983/background-images/2062220414.png&quot;) ;--->
-					<div id="root" class="wsite-section wsite-header-section " style=" height: 433px;vertical-align: bottom;background-background-repeat: no-repeat ;background-position: 50% 50% ;background-size: 100% ;background-size: cover;">
-						<div class="wsite-section-content">
-							<div class="container">
+					<!-- wsite-section-bg-image background-image: url(&quot;/uploads/1/1/5/7/115713983/background-images/2062220414.png&quot;) ;-->
+					<div id="root" class="wsite-section wsite-header-section " style="vertical-align: bottom; background-repeat: no-repeat ;background-position: 50% 50% ;background-size: 100% ;background-size: cover;">
+						<div class="wsite-section-content" id="root-section">
+							<div class="container" id="root-container">
 								<div class="wsite-youtube" style="margin-bottom:10px;margin-top:10px;">
 									<div class="wsite-youtube-wrapper wsite-youtube-size-large wsite-youtube-align-center">
 										<div class="wsite-youtube-container">
@@ -713,139 +713,10 @@
 										<h2 class="wsite-content-title" style="margin-top:0px;line-height:0.5">
 											<font color="#d5d5d5" size="6">Voice Enabled World Wide Web Over Blockchain</font>
 										</h2>
-										<!--div class="paragraph"><font color="#d5d5d5" size="5">Extend World Wide Web to IoT devices with blockchain<br> and artificial intelligence technologies</font></div-->
-										<!--
-                    <h2 class="wsite-content-title">
-                  
-                  <font color="#d5d5d5" style="font-weight:15"  size="6">TOKEN SALE SATRTS IN:
-                        
-                        <table style="text-align:center;margin-left:auto;margin-right:auto;max-width:600px;width:40%">
-                            <tr style="font-size:45px">
-                                <td id="remain_day"></td><td>:</td><td id="remain_hour"></td><td>:</td><td id="remain_minute"></td><td>:</td><td id="remain_second"></td>
-                          </tr>
-                            <tr style="font-size:15px">
-                                <td>days</td><td></td><td>hours</td><td></td><td>minutes</td><td></td><td>seconds</td>
-                            </tr>
-                            </table>
-                        <script>
-                            //new Date(2018,6,1,12,23,00);
-                            function setRemainTime(oDateEnd){
-                                var inter;
-                                function upDate(){
-                                    var oDateNow = new Date();
-                                    var leftTime = oDateEnd-oDateNow;
-                                    var iDay = parseInt(leftTime / 1000 / 60 / 60 / 24 , 10); //days
-                                    var iHour = parseInt(leftTime / 1000 / 60 / 60 % 24 , 10); //hour
-                                    var iMin = parseInt(leftTime / 1000 / 60 % 60, 10);//minute
-                                    var iSec = parseInt(leftTime / 1000 % 60, 10);//second
-                                    if(iDay <0 || iHour <0 || iMin <0 || iSec <0){
-                                        iDay=iHour=iMin=iSec=0;
-                                        window.clearInterval(inter);
-                                    }
-                                    $('#remain_day').text(iDay);
-                                    $('#remain_hour').text(iHour);
-                                    $('#remain_minute').text(iMin);
-                                    $('#remain_second').text(iSec);
-                                }
-                                inter = setInterval(function(){ upDate() },1000);
-                            }
-                            
-                            $.ajax({
-                                   url:"http://api.voicecoin.com/v1/IcoInfo",
-                                   type:"GET",
-                                   dataType:"json",
-                                   success: function(data){
-                                   try{
-                                        var start = data.startDate;
-                                       //formate {"sold":"0","available":"2,100,000,000","total":"2,100,000,000","percent":"0%","startDate":"2018-03-14T00:00:00"}
-                                       var myarray = start.split(/[T\-:]/);
-                                       var begin = new Date(myarray[0],myarray[1]-1,myarray[2],myarray[3],myarray[4],myarray[5]);
-                                        setRemainTime(begin);
-                                   }catch(err){
-                                      alert("sorry,time parse error,please refresh the page.");
-                                   }
-                                   },
-                                   error:function(data){
-                                    alert("time fetch error,please refresh the page.");
-                                  }
-                            });
-                            
-                                   
-                   
-                            
-                            
-                            </script>
-                    <!--
-                    <div style="text-align:center;margin-left:auto;margin-right:auto;padding-bottom:10px; padding-top:40px;font-size:25px">
-                            Get whitelisted and enjoy
-                            <br>
-                            your <span style="font-size: 30px">25%</span> bonus.
-                            <br>
-                            <span style="font-size: 30px">6000</span> participants
-                            <br>
-                            whitelisted.
-                        </div>
-                     -->
-										<!--
-                        <div>
-                             <div id="txt_resultinfo"></div>
-                            <input id="txt_add_whitelist" type="text" class="add_whitelist_txt" placeholder="mail address"/>
-                            <input id="btn_add_whitelist"  type="button" class="add_whitelist" value="Join Whitelist"></input>
-                        </div>
-                    </font>
-                  </h2>
-                -->
-										<script>
-											//
-											//  $('#txt_add_whitelist').focus();
-											function isValidEmail(email_val) {
-												if (email_val == '') {
-													return false;
-												}
-												var search_str = /^[\w\-\.]+@[\w\-\.]+(\.\w+)+$/;
-												if (!search_str.test(email_val)) {
-													return false;
-												}
-												return true;
-											}
-											$('#btn_add_whitelist').on('click', function () {
-												var email = $('#txt_add_whitelist').val();
-												if (!isValidEmail(email)) {
-													$('#txt_resultinfo').html(
-														"<font color='red' style='font-size:15px;'  >Please input your valid email address.</font>");
-													return false;
-												}
-												$.ajax({
-													url: "http://api.voicecoin.com/v1/Subscription",
-													type: 'POST',
-													dataType: 'json',
-													data: JSON.stringify({
-														"email": $('#txt_add_whitelist').val()
-													}),
-													contentType: "application/json; charset=utf-8",
-													success: function (data) {
-														$('#txt_resultinfo').html(
-															"<font color='green' style='font-size:15px;'>Congratulations! we have received your application,and we will deal with it as soon as possible.</font>"
-														);
-													},
-													error: function (data) {
-														$('#txt_resultinfo').html(
-															"<font color='green' style='font-size:15px;' >Sorry,server failure,please try later.Also you can contact the site administrator and provice the following info.[api:/v1/Subscription,code:" +
-															data.status + "]</font>");
-														//$('#txt_resultinfo').html("<font color='green'>Congratulations! we have received your application,and we will deal with it as soon as possible.</font>");
-													}
-												})
-											});
-										</script>
-										<!--
-                        <div class="paragraph">C<br><font color="#d5d5d5" style=""><font size="5">Register your next generation audio enabled domains on blockchain, create your voice chatbots, interact&nbsp;with the internet using your voice.</font><br><font size="6">​</font></font>
-                        </div>
-                    -->
 									</div>
 								</div>
 							</div>
 						</div>
-						<div class=""></div>
 					</div>
 				</div>
 			</div>
@@ -2032,6 +1903,20 @@
 	_W.Analytics.trackers.wGA = '_gaq';
 </script>
 -->
+	<script>
+		var resizeBanner = function () {
+			var rootH = $('#root').height();
+			var navbarH = $('#navbar').height() + 20 * 2;
+			var windowH = $(window).height();
+			var containerH = $('#root-container').height();
+			$('#root').height(windowH - navbarH);
+			$('#root > div:first-of-type').height(windowH - navbarH);
+			$('#root-container').css("padding-top", ((windowH - containerH) * 0.5 - navbarH) + 'px');
+		}
+		resizeBanner();
+		$(window).resize(resizeBanner);
+	</script>
+
 	<script type="text/javascript" async="1">
 		;
 		(function (p, l, o, w, i, n, g) {
@@ -2164,8 +2049,9 @@
 			var canvas = document.getElementById("canvas"),
 				ctx = canvas.getContext('2d');
 			var width = document.getElementById('root').clientWidth;
+			var height = $('#root').height();
 			canvas.width = width;
-			canvas.height = window.innerHeight + 400;
+			canvas.height = height;
 			var stars = [], // Array that contains the stars
 				FPS = 60, // Frames per second
 				// x = 100, // Number of stars
@@ -2280,6 +2166,49 @@
 			}
 		})(window._W && _W.jQuery);
 	</script>
+	<script>
+		//
+		//  $('#txt_add_whitelist').focus();
+		function isValidEmail(email_val) {
+			if (email_val == '') {
+				return false;
+			}
+			var search_str = /^[\w\-\.]+@[\w\-\.]+(\.\w+)+$/;
+			if (!search_str.test(email_val)) {
+				return false;
+			}
+			return true;
+		}
+		$('#btn_add_whitelist').on('click', function () {
+			var email = $('#txt_add_whitelist').val();
+			if (!isValidEmail(email)) {
+				$('#txt_resultinfo').html(
+					"<font color='red' style='font-size:15px;'  >Please input your valid email address.</font>");
+				return false;
+			}
+			$.ajax({
+				url: "http://api.voicecoin.com/v1/Subscription",
+				type: 'POST',
+				dataType: 'json',
+				data: JSON.stringify({
+					"email": $('#txt_add_whitelist').val()
+				}),
+				contentType: "application/json; charset=utf-8",
+				success: function (data) {
+					$('#txt_resultinfo').html(
+						"<font color='green' style='font-size:15px;'>Congratulations! we have received your application,and we will deal with it as soon as possible.</font>"
+					);
+				},
+				error: function (data) {
+					$('#txt_resultinfo').html(
+						"<font color='green' style='font-size:15px;' >Sorry,server failure,please try later.Also you can contact the site administrator and provice the following info.[api:/v1/Subscription,code:" +
+						data.status + "]</font>");
+					//$('#txt_resultinfo').html("<font color='green'>Congratulations! we have received your application,and we will deal with it as soon as possible.</font>");
+				}
+			})
+		});
+	</script>
+
 </body>
 
 </html>

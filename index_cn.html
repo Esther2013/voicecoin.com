@@ -680,8 +680,8 @@
 			<div class="wsite-elements wsite-not-footer wsite-header-elements">
 				<div class="wsite-section-wrap">
 					<div id="root" class="wsite-section wsite-header-section" style="height: 433px;vertical-align: bottom;background-repeat: no-repeat ;background-position: 50% 50% ;background-size: 100% ;background-color: transparent ;background-size: cover;">
-						<div class="wsite-section-content">
-							<div class="container">
+						<div class="wsite-section-content" id="root-section">
+							<div class="container" id="root-container">
 								<div class="wsite-youtube" style="margin-bottom:10px;margin-top:10px;">
 									<div class="wsite-youtube-wrapper wsite-youtube-size-large wsite-youtube-align-center">
 										<div class="wsite-youtube-container">
@@ -710,136 +710,10 @@
 										<h2 class="wsite-content-title" style="margin-top:0px;line-height:0.5">
 											<font color="#d5d5d5" size="6">去中心化的语音万维网</font>
 										</h2>
-										<!--div class="paragraph"><font color="#d5d5d5" size="5">Extend World Wide Web to IoT devices with blockchain<br> and artificial intelligence technologies</font></div-->
-										<!--
-                    <h2 class="wsite-content-title">
-                  
-                  <font color="#d5d5d5" style="font-weight:15"  size="6">TOKEN SALE SATRTS IN:
-                        
-                        <table style="text-align:center;margin-left:auto;margin-right:auto;max-width:600px;width:40%">
-                            <tr style="font-size:45px">
-                                <td id="remain_day"></td><td>:</td><td id="remain_hour"></td><td>:</td><td id="remain_minute"></td><td>:</td><td id="remain_second"></td>
-                          </tr>
-                            <tr style="font-size:15px">
-                                <td>days</td><td></td><td>hours</td><td></td><td>minutes</td><td></td><td>seconds</td>
-                            </tr>
-                            </table>
-                        <script>
-                            //new Date(2018,6,1,12,23,00);
-                            function setRemainTime(oDateEnd){
-                                var inter;
-                                function upDate(){
-                                    var oDateNow = new Date();
-                                    var leftTime = oDateEnd-oDateNow;
-                                    var iDay = parseInt(leftTime / 1000 / 60 / 60 / 24 , 10); //days
-                                    var iHour = parseInt(leftTime / 1000 / 60 / 60 % 24 , 10); //hour
-                                    var iMin = parseInt(leftTime / 1000 / 60 % 60, 10);//minute
-                                    var iSec = parseInt(leftTime / 1000 % 60, 10);//second
-                                    if(iDay <0 || iHour <0 || iMin <0 || iSec <0){
-                                        iDay=iHour=iMin=iSec=0;
-                                        window.clearInterval(inter);
-                                    }
-                                    $('#remain_day').text(iDay);
-                                    $('#remain_hour').text(iHour);
-                                    $('#remain_minute').text(iMin);
-                                    $('#remain_second').text(iSec);
-                                }
-                                inter = setInterval(function(){ upDate() },1000);
-                            }
-                            
-                            $.ajax({
-                                   url:"http://api.voicecoin.com/v1/IcoInfo",
-                                   type:"GET",
-                                   dataType:"json",
-                                   success: function(data){
-                                   try{
-                                        var start = data.startDate;
-                                       //formate {"sold":"0","available":"2,100,000,000","total":"2,100,000,000","percent":"0%","startDate":"2018-03-14T00:00:00"}
-                                       var myarray = start.split(/[T\-:]/);
-                                       var begin = new Date(myarray[0],myarray[1]-1,myarray[2],myarray[3],myarray[4],myarray[5]);
-                                        setRemainTime(begin);
-                                   }catch(err){
-                                      alert("sorry,time parse error,please refresh the page.");
-                                   }
-                                   },
-                                   error:function(data){
-                                    alert("time fetch error,please refresh the page.");
-                                  }
-                            });
-                            
-                                   
-                   
-                            
-                            
-                            </script>
-                    <!--
-                    <div style="text-align:center;margin-left:auto;margin-right:auto;padding-bottom:10px; padding-top:40px;font-size:25px">
-                            Get whitelisted and enjoy
-                            <br>
-                            your <span style="font-size: 30px">25%</span> bonus.
-                            <br>
-                            <span style="font-size: 30px">6000</span> participants
-                            <br>
-                            whitelisted.
-                        </div>
-                     -->
-										<!--
-                        <div>
-                             <div id="txt_resultinfo"></div>
-                            <input id="txt_add_whitelist" type="text" class="add_whitelist_txt" placeholder="电子邮箱"/>
-                            <input id="btn_add_whitelist"  type="button" class="add_whitelist" value="加入白名单"></input>
-                        </div>
-                    </font>
-                  </h2>
-                -->
-										<script>
-											//
-											//  $('#txt_add_whitelist').focus();
-											function isValidEmail(email_val) {
-												if (email_val == '') {
-													return false;
-												}
-												var search_str = /^[\w\-\.]+@[\w\-\.]+(\.\w+)+$/;
-												if (!search_str.test(email_val)) {
-													return false;
-												}
-												return true;
-											}
-											$('#btn_add_whitelist').on('click', function () {
-												var email = $('#txt_add_whitelist').val();
-												if (!isValidEmail(email)) {
-													$('#txt_resultinfo').html("<font color='red' style='font-size:15px;'  >请输入有效的邮箱地址.</font>");
-													return false;
-												}
-												$.ajax({
-													url: "http://api.voicecoin.com/v1/Subscription",
-													type: 'POST',
-													dataType: 'json',
-													data: JSON.stringify({
-														"email": $('#txt_add_whitelist').val()
-													}),
-													contentType: "application/json; charset=utf-8",
-													success: function (data) {
-														$('#txt_resultinfo').html("<font color='green' style='font-size:15px;'>恭喜，我们已经收到你的申请，将会尽快处理.</font>");
-													},
-													error: function (data) {
-														$('#txt_resultinfo').html(
-															"<font color='green' style='font-size:15px;' >对不起，服务端异常，你可以联系管理员并提供以下信息.[api:/v1/Subscription,code:" +
-															data.status + "]</font>");
-														//$('#txt_resultinfo').html("<font color='green'>Congratulations! we have received your application,and we will deal with it as soon as possible.</font>");
-													}
-												})
-											});
-										</script>
-										<!--
-                        <div class="paragraph">C<br><font color="#d5d5d5" style=""><font size="5">Register your next generation audio enabled domains on blockchain, create your voice chatbots, interact&nbsp;with the internet using your voice.</font><br><font size="6">​</font></font>
-                        </div>
-                    -->
 									</div>
 								</div>
 							</div>
 						</div>
-						<div class=""></div>
 					</div>
 				</div>
 			</div>
@@ -1083,7 +957,7 @@
 																<h2 class="wsite-content-title">
 																	<font color="#2a2a2a" size="4">语义VNS解析</font>
 																</h2>
-																<!--wsite-youtube-size-medium---->
+																<!--wsite-youtube-size-medium-->
 																<div class="wsite-youtube" style="margin-bottom:10px;margin-top:10px;">
 																	<div class="wsite-youtube-wrapper wsite-youtube-size-large wsite-youtube-align-left">
 																		<div class="wsite-youtube-container">
@@ -2010,6 +1884,141 @@
 	_W.Analytics.trackers.wGA = '_gaq';
 </script>
 -->
+	<script>
+		var resizeBanner = function () {
+			var rootH = $('#root').height();
+			var navbarH = $('#navbar').height() + 20 * 2;
+			var windowH = $(window).height();
+			var containerH = $('#root-container').height();
+			$('#root').height(windowH - navbarH);
+			$('#root > div:first-of-type').height(windowH - navbarH);
+			$('#root-container').css("padding-top", ((windowH - containerH) * 0.5 - navbarH) + 'px');
+		}
+		resizeBanner();
+		$(window).resize(resizeBanner);
+	</script>
+	<script type="text/javascript">
+		function componentDidMount() {
+			var canvas = document.getElementById("canvas"),
+				ctx = canvas.getContext('2d');
+			var width = document.getElementById('root').clientWidth;
+			var height = $('#root').height();
+			canvas.width = width;
+			canvas.height = height;
+			var stars = [], // Array that contains the stars
+				FPS = 60, // Frames per second
+				// x = 100, // Number of stars
+				x = Math.round(canvas.width / 25),
+				mouse = {
+					x: 0,
+					y: 0
+				}; // mouse location
+			// Push stars to array
+			for (var i = 0; i < x; i++) {
+				stars.push({
+					x: Math.random() * canvas.width,
+					y: Math.random() * canvas.height,
+					radius: Math.random() * 1 + 1,
+					vx: Math.floor(Math.random() * 50) - 25,
+					vy: Math.floor(Math.random() * 50) - 25
+				});
+			}
+			// Draw the scene
+			function draw() {
+				ctx.clearRect(0, 0, canvas.width, canvas.height);
+				ctx.globalCompositeOperation = "lighter";
+				for (var i = 0, x = stars.length; i < x; i++) {
+					var s = stars[i];
+					ctx.fillStyle = "#fff";
+					ctx.beginPath();
+					ctx.arc(s.x, s.y, s.radius, 0, 2 * Math.PI);
+					ctx.fill();
+					ctx.fillStyle = 'black';
+					ctx.stroke();
+				}
+				ctx.beginPath();
+				for (var i = 0, x = stars.length; i < x; i++) {
+					var starI = stars[i];
+					ctx.moveTo(starI.x, starI.y);
+					if (distance(mouse, starI) < 150) ctx.lineTo(mouse.x, mouse.y);
+					for (var j = 0, x = stars.length; j < x; j++) {
+						var starII = stars[j];
+						if (distance(starI, starII) < 150) {
+							//ctx.globalAlpha = (1 / 150 * distance(starI, starII).toFixed(1));
+							ctx.lineTo(starII.x, starII.y);
+						}
+					}
+				}
+				ctx.lineWidth = 0.05;
+				ctx.strokeStyle = 'white';
+				ctx.stroke();
+			}
+
+			function distance(point1, point2) {
+				var xs = 0;
+				var ys = 0;
+				xs = point2.x - point1.x;
+				xs = xs * xs;
+				ys = point2.y - point1.y;
+				ys = ys * ys;
+				return Math.sqrt(xs + ys);
+			}
+			// Update star locations
+			function update() {
+				for (var i = 0, x = stars.length; i < x; i++) {
+					var s = stars[i];
+					s.x += s.vx / FPS;
+					s.y += s.vy / FPS;
+					if (s.x < 0 || s.x > canvas.width) s.vx = -s.vx;
+					if (s.y < 0 || s.y > canvas.height) s.vy = -s.vy;
+				}
+			}
+			canvas.addEventListener('mousemove', function (e) {
+				mouse.x = e.clientX;
+				mouse.y = e.clientY;
+			});
+			// Update and draw
+			function tick() {
+				draw();
+				update();
+				requestAnimationFrame(tick);
+			}
+			tick();
+		}
+		componentDidMount();
+		(function ($) {
+			window.cookie_location = '';
+			// this cookie_content should already be pre-encoded from CookieSettingView.js
+			window.cookie_content = '' || _W.stl('templates.publish.virtual-includes.footerCode_1');
+			window.cookie_policy_key = '913265258336647854_cookie_policy';
+			window.cookie_content_hash = '';
+			if (!_W.getCookie(window.cookie_policy_key) || _W.getCookie(window.cookie_policy_key) !== window.cookie_content_hash) {
+				if (window.cookie_location === 'top' || window.cookie_location === 'bottom') {
+					$('#eu-cookie-content').text(decodeURIComponent(window.cookie_content));
+					(window.cookie_location === 'top') ? animateFromTop(): animateFromBottom();
+					$('#eu-cookie').show();
+				}
+			}
+			$('#eu-cookie-close').click(function () {
+				_W.setCookie(window.cookie_policy_key, window.cookie_content_hash, 100000);
+				$('#eu-cookie').hide();
+			});
+
+			function animateFromTop() {
+				$('#eu-cookie').css({
+					'top': '0px',
+					'animation': 'reveal-top 1 2s'
+				});
+			}
+
+			function animateFromBottom() {
+				$('#eu-cookie').css({
+					'bottom': '0px',
+					'animation': 'reveal-bottom 1 2s'
+				});
+			}
+		})(window._W && _W.jQuery);
+	</script>
 	<script type="text/javascript" async="1">
 		;
 		(function (p, l, o, w, i, n, g) {
