@@ -1771,13 +1771,22 @@
 																							<i class="fab fa-telegram-plane"></i>
 																						</span>
 																					</a>
-																					<a class="last-child wsite-social-item" href="#" target="_blank" alt-text="微信 WeChat">
+																					<a class="last-child wsite-social-item" id="wechat-btn" alt-text="微信">
 																						<span class="wsite-social-item-inner">
 																							<i class="fab fa-weixin"></i>
 																						</span>
 																					</a>
 																				</span>
 																				<div style="height:0px;overflow:hidden"></div>
+																			</div>
+																		</td>
+																	</tr>
+																	<tr class="wsite-multicol-tr">
+																		<td class="wsite-multicol-col" style="width:53.872515421522%; padding:0 15px;">
+																		</td>
+																		<td class="wsite-multicol-col" style="width:46.127484578478%; padding:0 15px;">
+																			<div id="wechat-img" style="text-align:left;margin-top:-24px;">
+																				<img src="./VOICECOIN_files/voicecoin-wechat.jpg" alt="Voicecoin Wechat" height="128px" width="128px">
 																			</div>
 																		</td>
 																	</tr>
@@ -1797,7 +1806,7 @@
 					<div class="paragraph" style="text-align:center;">
 						<span style="color:rgb(146, 146, 146); font-weight:400">
 							<font size="4">版权 © 2018
-								<a href="http://www.voiceweb.io/" target="_blank">语音网络基金会</a>. 版权所有。</font>
+								<a href="http://www.voiceweb.io/" target="_blank">语音网络基金会</a> 版权所有</font>
 						</span>
 					</div>
 				</div>
@@ -1896,7 +1905,13 @@
 		}
 		resizeBanner();
 		$(window).resize(resizeBanner);
+
+		$('#wechat-img').hide();
+		$('#wechat-btn').click(function () {
+			$('#wechat-img').toggle();
+		});
 	</script>
+
 	<script type="text/javascript">
 		function componentDidMount() {
 			var canvas = document.getElementById("canvas"),
