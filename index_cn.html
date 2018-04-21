@@ -1423,7 +1423,7 @@
 																					</div>
 																					<div style="text-align:center;">
 																						<span class="wsite-social wsite-social-default">
-																							<a class="first-child wsite-social-item wsite-social-linkedin" href="https://www.linkedin.com/in/doreen-reuchsel-b609b97" target="_blank"
+																							<a class="first-child wsite-social-item wsite-social-linkedin" href="https://www.linkedin.com/in/doreen-reuchsel-b609b975" target="_blank"
 																									alt-text="Linkedin">
 																								<span class="wsite-social-item-inner"></span>
 																							</a>
@@ -1494,7 +1494,7 @@
 																	</div>
 																</div>
 																<h2 class="wsite-content-title" style="text-align:center;">
-																	<font size="5" color="#2a2a2a">刘兵</font>
+																	<font size="5" color="#2a2a2a">刘兵，教授</font>
 																</h2>
 																<div class="paragraph" style="text-align:center;">
 																	<font size="2">刘兵教授是ACM Fellow以及IEEE Fellow，主要从事语义分析、观点挖掘、机器学习以及自然语言处理方面的研究，论文曾在KDD会议中获得“10-year test-of-time”奖项，还担任ACM SIGKDD Chair, DMKD Action Editor，TWEB、KAIS等期刊的Associate Editor。</font>
@@ -1953,9 +1953,9 @@
 			var navbarH = $('#navbar').height() + 20 * 2;
 			var windowH = $(window).height();
 			var containerH = $('#root-container').height();
-			$('#root').height(windowH - navbarH);
-			$('#root > div:first-of-type').height(windowH - navbarH);
-			$('#root-container').css("padding-top", ((windowH - containerH) * 0.5 - navbarH) + 'px');
+			//$('#root').height(windowH - navbarH);
+			//$('#root > div:first-of-type').height(windowH - navbarH);
+			//$('#root-container').css("padding-top", ((windowH - containerH) * 0.5 - navbarH) + 'px');
 		}
 		resizeBanner();
 		$(window).resize(resizeBanner);
@@ -1973,7 +1973,8 @@
 			var width = document.getElementById('root').clientWidth;
 			var height = $('#root').height();
 			canvas.width = width;
-			canvas.height = height;
+            canvas.height = window.innerHeight + 400;
+			//canvas.height = height;
 			var stars = [], // Array that contains the stars
 				FPS = 60, // Frames per second
 				// x = 100, // Number of stars
