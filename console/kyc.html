@@ -1,0 +1,235 @@
+﻿<!doctype html>
+<html class="no-js">
+	<head>
+		<meta charset="utf-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="description" content="" />
+		<meta name="keywords" content="" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+		<title>KYC</title>
+		<!-- Set render engine for 360 browser -->
+		<meta name="renderer" content="webkit" />
+		<!-- No Baidu Siteapp-->
+		<meta http-equiv="Cache-Control" content="no-siteapp" />
+		<meta name="format-detection" content="telephone = no" />
+		<!-- Add to homescreen for Chrome on Android -->
+		<meta name="mobile-web-app-capable" content="yes" />
+		<!-- Add to homescreen for Safari on iOS -->
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+		<meta name="apple-mobile-web-app-title" content="" />
+		<meta name="msapplication-TileColor" content="#090a0a" />
+        <link href="css/mui.picker.all.css" rel="stylesheet" />
+		<link href="css/global.css" rel="stylesheet" />
+		<link rel="stylesheet" href="css/default_theme.css" />
+		<script src="js/jquery-1.11.1.min.js"></script>
+        <script src="js/mui.min.js"></script>
+		<script src="js/common.js"></script>
+        <script src="js/mui.picker.all.js"></script>
+        <script src="js/city.data.js"></script>
+	</head>
+	<body>
+		<div class="topbox">
+			<div class="wbox clearfix">
+				<div class="topTips">
+					<span>1 ETH=750 Voice Coinn</span>
+					<span>1 ETH=0.05040013 BTC</span>
+					<span>1 ETH=21.60224732 ETC</span>
+					<span>1 ETH=5.34908046 LTC</span>
+				</div>
+				<div class="lanBox">
+					<b>Language</b>
+					<p><i><img src="images/lan_en.jpg" /></i><span>English</span></p>
+					<ul class="lanlist">						
+						<li><i><img src="images/lan_chinese.jpg" /></i><span>简体中文</span></li>
+						<li><i><img src="images/lan_deutsch.jpg" /></i><span>Deutsch</span></li>
+						<li><i><img src="images/lan_espanol.jpg" /></i><span>Español</span></li>
+						<li><i><img src="images/lan_pycc.jpg" /></i><span>Русский</span></li>
+					</ul>
+				</div>
+			</div>	
+		</div>
+		<div class="header">
+			<div class="wbox">
+				<a href="#" class="logo"><img src="images/logo.svg" /></a>
+				<div class="menuBox">
+					<p><span>aa@gmail.com</span><i class="down_icon"></i></p>
+					<ul class="menuList">
+						<li><a href="profile.html"><span>Profile</span></a></li>
+						<li><a href="security.html"><span>Security</span></a></li>
+						<li><a href="kyc.html"><span>KYC</span></a></li>
+						<li><a href="change.html"><span>Change password</span></a></li>
+						<li><a href="#"><span>Layout</span></a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<div class="backdrop">
+			<div class="container">
+				<div class="profileBox">
+					<div class="tabBox">
+						<a href="profile.html"><i class="pro_icon"></i><span>Profile</span></a>
+						<a href="security.html"><i class="sec_icon"></i><span>Security</span></a>
+						<a href="kyc.html"  class="on"><i class="kyc_icon"></i><span>KYC</span></a>
+					</div>
+					<div class="tabWrap">
+						<div class="profileCheck">
+							<i class="checkDefaultSpan"><input type="checkbox" name="sec" id="sec" class="checkDefault" /><label for="sec"></label> </i>
+							<span>Apply for KYC</span>
+							<b>Suceess</b>
+						</div>
+						<div class="infoForm">
+							<div class="firstBox">
+								<b>First Name</b>
+								<input type="text" name="firstName" id="firstName" value="" class="borderInput" />
+							</div>
+							<div class="lastBox">
+								<b>Last Name</b>
+								<input type="text" name="lastName" id="lastName" value="" class="borderInput" />
+							</div>
+							<div class="birthBox">
+								<b>Date of birth</b>
+								<input type="text" name="Year" id="Year" readonly="readonly" value="" placeholder="Year" class="borderInput smallInput dtpick" />
+                                <input type="text" name="Mouth" id="Mouth" readonly="readonly" value="" placeholder="Mouth" class="borderInput smallInput dtpick" />
+                                <input type="text" name="Day" id="Day" readonly="readonly" value="" placeholder="Day" class="borderInput smallInput dtpick" />
+							</div>
+							<div class="addressBox">
+								<b>ADDRESS</b>
+								<input type="text" name="Country" id="Country" value="" placeholder="Country" class="borderInput smallInput picke" readonly="readonly" />
+                                <input type="text" name="Provance" id="Provance" value="" placeholder="Provance" class="borderInput smallInput picke" readonly="readonly" />
+                                <input type="text" name="City" id="City" value="" placeholder="City" class="borderInput smallInput picke" readonly="readonly" />
+								<p>
+									<input type="text" name="Zip code" id="Zip code" value="" placeholder="Zip code" class="borderInput smallInput" />
+									<input type="text" name="Street" id="Street" value="" placeholder="Street" class="borderInput" />
+								</p>
+							</div>
+						</div>
+					</div>										
+				</div>
+			</div>
+		</div>
+		<div class="whiteBg">
+            <div class="linkBox">
+                <a href="#"><b><img src="images/f1_icon1.png" alt="" /></b><span><img src="images/f1_icon.png" alt="" /></span></a>
+                <a href="#"><b><img src="images/f2_icon1.png" alt="" /></b><span><img src="images/f2_icon.png" alt="" /></span></a>
+                <a href="#"><b><img src="images/f3_icon1.png" alt="" /></b><span><img src="images/f3_icon.png" alt="" /></span></a>
+                <a href="#"><b><img src="images/f4_icon1.png" alt="" /></b><span><img src="images/f4_icon.png" alt="" /></span></a>
+                <a href="#"><b><img src="images/f5_icon1.png" alt="" /></b><span><img src="images/f5_icon.png" alt="" /></span></a>
+                <a href="#"><b><img src="images/f6_icon1.png" alt="" /></b><span><img src="images/f6_icon.png" alt="" /></span></a>
+                <a href="#"><b><img src="images/f7_icon1.png" alt="" /></b><span><img src="images/f7_icon.png" alt="" /></span></a>
+                <a href="#"><b><img src="images/f8_icon1.png" alt="" /></b><span><img src="images/f8_icon.png" alt="" /></span></a>
+                <a href="#"><b><img src="images/f9_icon1.png" alt="" /></b><span><img src="images/f9_icon.png" alt="" /></span></a>
+            </div>
+		</div>
+		<div class="bottomBg">
+			<div class="footer">
+				<div class="btLogo">
+					<img src="images/logo.svg"/>
+					<span>Make Virtual Assets Real</span>
+				</div>
+				<ul class="navList">
+					<li>
+						<b><a href="#">Foundation</a></b>
+						<span><a href="#">Roadmap</a></span>
+						<span><a href="#">Team</a></span>
+						<span><a href="#">Contacts</a></span>					
+					</li>
+					<li>
+						<b><a href="#">Documentation</a></b>
+						<span><a href="#">One Pager</a></span>
+						<span><a href="#">White Paper</a></span>
+						<span><a href="#">SEC Howey Test</a></span>	
+						<span><a href="#">General Terms and Conditions</a></span>	
+						<span><a href="#">Privacy Policy</a></span>	
+						<span><a href="#">Tokens Sale Policy</a></span>
+					</li>
+					<li>
+						<b><a href="#">Deveopers</a></b>
+						<span><a href="#">GitHub</a></span>			
+					</li>
+				</ul>
+			</div>
+            <div class="copyright">
+                <p>Copyright © 2017 Voiceweb Foundation (Voiceweb Protocol Labs), Zug, Switzerland. All Rights Reserved.</p>
+            </div>
+		</div>
+	</body>
+</html>
+<script type="text/javascript">
+    //省市区选择控件调用start
+    (function ($, doc) {
+        $.ready(function () {
+            var cityPicker3 = new $.PopPicker({layer: 3});
+            cityPicker3.setData(cityData3);
+            var btns = $('.picke');
+            btns.each(function (i, btn) {
+                btn.addEventListener('tap', function () {
+                    cityPicker3.show(function (items) {
+                        doc.getElementById('Country').value = (items[0] || {}).text;
+                        doc.getElementById('Provance').value = (items[1] || {}).text ;
+                        doc.getElementById('City').value = (items[2] || {}).text;
+                        doc.getElementById('Country').setAttribute("data", (items[0] || {}).value);
+                        doc.getElementById('Provance').setAttribute("data", (items[1] || {}).value);
+                        doc.getElementById('City').setAttribute("data",(items[2] || {}).value);
+                    });
+                }, false);
+            });
+
+            var dbtns = $('.dtpick');
+            var dtPicker = new mui.DtPicker({ "type": "date","value":"2001-01-02","beginYear": 1903, "endYear": 2018 });
+            dbtns.each(function (i, dbtn) {
+                dbtn.addEventListener('tap', function () {
+                    dtPicker.show(function (rs) {
+                        doc.getElementById('Year').value = rs.y.text;
+                        doc.getElementById('Mouth').value = rs.m.text;
+                        doc.getElementById('Day').value = rs.d.text;
+                    });
+                }, false);
+            });
+
+
+
+
+        });
+    })(mui, document);
+    //省市区选择控件调用end
+
+
+    ////省市区选择控件调用start
+    //(function ($, doc) {
+    //    $.ready(function () {
+    //        //-----------------------------------------
+    //        //					//级联示例
+    //        var cityPicker3 = new $.PopPicker({
+    //            layer: 3
+    //        });
+    //        cityPicker3.setData(cityData3);
+    //        //寄件地区选择 start
+    //        var showCityPickerButton = doc.getElementById('Country');
+    //        var cityResult3 = doc.getElementById('Country');
+    //        showCityPickerButton.addEventListener('tap', function (event) {
+    //            cityPicker3.show(function (items) {
+    //                cityResult3.value = (items[0] || {}).text + " " + (items[1] || {}).text + " " + (items[2] || {}).text;
+    //                cityResult3.setAttribute("data", (items[0] || {}).value + " " + (items[1] || {}).value + " " + (items[2] || {}).value);
+    //                //返回 false 可以阻止选择框的关闭
+    //                //return false;
+    //            });
+    //        }, false);
+    //        //寄件地区选择 end
+    //        //收件地区选择 start
+    //        var showCityPickerButton_addressee = doc.getElementById('addressee_cityArea');
+    //        var cityResult_addressee = doc.getElementById('addressee_cityArea');
+    //        showCityPickerButton_addressee.addEventListener('tap', function (event) {
+    //            cityPicker3.show(function (items) {
+    //                cityResult_addressee.value = (items[0] || {}).text + " " + (items[1] || {}).text + " " + (items[2] || {}).text;
+    //                cityResult_addressee.setAttribute("data", (items[0] || {}).value + " " + (items[1] || {}).value + " " + (items[2] || {}).value);
+    //                //返回 false 可以阻止选择框的关闭
+    //                //return false;
+    //            });
+    //        }, false);
+    //        //收件地区选择 end
+    //    });
+    //})(mui, document);
+    ////省市区选择控件调用end
+
+</script>
